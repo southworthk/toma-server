@@ -1,0 +1,184 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#myPage"><img border="0" src="2.png" width="50" height="50"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">PRODUCT FEATURES</a></li>
+                <li><a href="#services">MAIN MENU</a></li>
+                <li><a >CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<span *ngIf="showFeatures">
+    <div class="jumbotron text-center">
+        <h1>aTOM</h1>
+        <p>Application for the automated navigation, inspection and analysis of the Testable Object Model</p>
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-1" for="username"></label>
+                        <div class="col-sm-11">
+                            <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-1" for="pwd"></label>
+                        <div class="col-sm-11">
+                            <input type="password" class="form-control" id="pwd" placeholder="Enter Password">
+                        </div>
+                    </div>
+                    <div  class="form-group">
+                        <div class="col-sm-offset-5 col-sm-2">
+                            <button (click)="loginUser()" type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+</span>
+
+<!-- Container (About Section) -->
+<span *ngIf="showFeatures">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-5">
+                <h2>Product Features</h2>
+                <ul>
+                    <li>All testable objects represented in graph database</li>
+                    <li>Selectors, paths and configuration separated from code</li>
+                    <li>Tests generated dynamically from storable parameters</li>
+                    <li>Much of the existing framework code can be re-used</li>
+                    <li>Much faster test creation and lower learning curve for testers</li>
+                    <li>Test coverage much easier to calculate</li>
+                    <li>Test grid also represented in graph database making testing more flexible</li>
+                    <li>Load testing can more easily be passed to the cloud</li>
+                    <li>Application provides for self-healing tests</li>
+                    <li>Real-time test results accessible through web and mobile clients</li>
+                    <li>Tests can be launched and results retrieved through REST API</li>
+                    <li>Parsing of testable objects in HTML source can be automated</li>
+                    <li>Application can be integrated with Jira to simplify test management</li>
+                    <li>No additional costs to USANA, no additional hires</li>
+                    <li>Application is commercializable -- nothing like it is currently available</li>
+                </ul>
+            </div>
+            <div class="col-sm-7">
+                <img border="0" src="graph.png" width="700">
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+</span>
+<div id="services" class="container-fluid text-center">
+    <h2>MAIN MENU OPTIONS</h2>
+    <h4>&nbsp;</h4>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-pencil logo-small"></span>
+            <h4>UPDATE Testable Object Model</h4>
+            <p><a routerLink='*'>Create new testable entities and relationships</a></p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-ok logo-small"></span>
+            <h4>CREATE TEST</h4>
+            <p>Supply parameters and identify features to test</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-th-list logo-small"></span>
+            <h4>RUN TEST</h4>
+            <p>Execute saved tests in grid on in the cloud</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-signal logo-small"></span>
+            <h4>VIEW REPORTS</h4>
+            <p>Test coverage and results</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-time logo-small"></span>
+            <h4>MANAGE TESTS</h4>
+            <p>Link tests to tickets and so on</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-wrench logo-small"></span>
+            <h4>MAINTENANCE</h4>
+            <p>Database, grid configuration, etc.</p>
+        </div>
+    </div>
+</div>
+<br><br><br><br>
+<br><br>
+<br><br>
+<router-outlet></router-outlet>
+<!--<h1>My Revised Template</h1>
+{{title}}
+<span *ngIf="showFeatures">Clicks: {{count}}</span>
+<button (click)="increaseCount()">Click me</button>
+
+
+
+
+<footer class="container-fluid text-center">
+    <a href="#myPage" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+</footer>-->
+
+<script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function() {
+            $(".slideanim").each(function(){
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    })
+</script>
+
+
